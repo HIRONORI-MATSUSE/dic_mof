@@ -6,10 +6,10 @@ class RentalPropertiesController < ApplicationController
     end
 
     def new
-      5.times do
       @rental_property = RentalProperty.new
-      @rental_property.desired_conditions.build
-      end
+
+      5.times{@rental_property.desired_conditions.build}
+      #@chldren = 5 * @rental_property.desired_conditions.build
     end
 
     def show
@@ -20,7 +20,8 @@ class RentalPropertiesController < ApplicationController
 
     def create
       @rental_property = RentalProperty.new(rental_property_params)
-      @rental_property.desired_conditions.build
+      # 5.times@rental_property.desired_conditions.build
+      # binding.pry
         if @rental_property.save
           redirect_to rental_properties_path
         else
