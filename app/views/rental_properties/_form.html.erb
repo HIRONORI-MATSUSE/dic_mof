@@ -1,4 +1,3 @@
-<% 5.times do%>
 <%= form_for(@rental_property) do |f| %>
   <% if rental_property.errors.any? %>
     <div id="error_explanation">
@@ -37,50 +36,31 @@
   </div>
 
 <hr/>
+
 <%= f.fields_for :desired_conditions do |desired_condition_form| %>
 
-  <h3>最寄り駅１</h3>
+
+
 
   <div class="field">
-    <%= desired_condition_form.label :roote_name, "路線名" %>
-    <%= desired_condition_form.text_field :route_name %>
+    <%= desired_condition_form.label :route_name, "路線名" %>
+    <%= desired_condition_form.text_field :route_name %>線
   </div>
 
   <div class="field">
     <%= desired_condition_form.label :station_name, "駅名" %>
-    <%= desired_condition_form.text_field :station_name %>
+    <%= desired_condition_form.text_field :station_name %>駅
   </div>
 
   <div class="field">
     <%= desired_condition_form.label :walking_minutes, "徒歩分数" %>
-    <%= desired_condition_form.text_field :walking_minutes %>
-  </div>
-
-  <h3>最寄り駅2</h3>
-
-  <div class="field">
-    <%= desired_condition_form.label :roote_name, "路線名" %>
-    <%= desired_condition_form.text_field :route_name %>
-  </div>
-
-  <div class="field">
-    <%= desired_condition_form.label :station_name, "駅名" %>
-    <%= desired_condition_form.text_field :station_name %>
-  </div>
-
-  <div class="field">
-    <%= desired_condition_form.label :walking_minutes, "徒歩分数" %>
-    <%= desired_condition_form.text_field :walking_minutes %>
+    <%= desired_condition_form.text_field :walking_minutes %>分
   </div>
   <br>
 
-
 <% end %>
-
 
   <div class="actions">
     <%= f.submit %>
   </div>
-
-<% end %>
 <% end %>
